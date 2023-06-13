@@ -81,7 +81,6 @@ public class BlockListener implements Listener {
 					: doubleChest.getLeftSide().getLocation();
 
 			ContainerStorageUtil.copyContainerState(otherLocation, block.getLocation());
-			player.sendMessage(ContainerStorageUtil.getContainerOwner(block.getLocation()));
 			player.sendMessage(ChatColor.GREEN + "Successfully extended locked chest");
 
 		}, 0L);

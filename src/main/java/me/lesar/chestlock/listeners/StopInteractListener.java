@@ -27,10 +27,11 @@ public class StopInteractListener implements Listener {
 		Player player = e.getPlayer();
 		ChestLockPlugin.Interaction interaction = plugin.interactingPlayers.remove(player);
 		if(interaction != null) switch(interaction.type()) {
-			case LOCK -> player.sendMessage(ChatColor.YELLOW + "Stopped locking chests");
-			case UNLOCK -> player.sendMessage(ChatColor.YELLOW + "Stopped unlocking chests");
-			case SHARE -> player.sendMessage(ChatColor.YELLOW + "Stopped sharing chests");
-			case UNSHARE -> player.sendMessage(ChatColor.YELLOW + "Stopped unsharing chests");
+			case LOCK -> player.sendMessage(ChatColor.YELLOW + "Stopped locking containers");
+			case UNLOCK -> player.sendMessage(ChatColor.YELLOW + "Stopped unlocking containers");
+			case SHARE -> player.sendMessage(ChatColor.YELLOW + "Stopped sharing containers");
+			case UNSHARE -> player.sendMessage(ChatColor.YELLOW + "Stopped unsharing containers");
+			case INFO -> player.sendMessage(ChatColor.YELLOW + "Stopped viewing containers info");
 		}
 
 	}

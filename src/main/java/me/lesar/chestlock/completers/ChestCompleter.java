@@ -35,15 +35,24 @@ public class ChestCompleter implements TabCompleter {
 
 		if(!(sender instanceof Player)) return new ArrayList<>();
 
-		if(args.length == 1) return firstArgs;
-		if(args.length == 2 && (args[0].equalsIgnoreCase("share") || args[0].equalsIgnoreCase("unshare"))) {
+		if(args.length == 1) {
+
+			if(args[0].length() == 0) return firstArgs;
+
+			List<String> currArgs = new ArrayList<>();
+			for(String arg : firstArgs) if(arg.toLowerCase().startsWith(args[0].toLowerCase())) currArgs.add(arg);
+			return currArgs;
+
+		}
+		if(args.length == 2 && args[0].length() > 0 && (args[0].equalsIgnoreCase("share") || args[0].equalsIgnoreCase("unshare"))) {
 
 			Player player = (Player) sender;
 
 			HashSet<String> otherPlayers = new HashSet<>();
 			for(Player online : plugin.getServer().getOnlinePlayers()) otherPlayers.add(online.getName());
 			for(OfflinePlayer offline : plugin.getServer().getOfflinePlayers()) otherPlayers.add(offline.getName());
-			otherPlayers.remove(player.getName());
+			if(player.getName() != "") otherPlayers.remove(player.getName());
+			if(player.getDisplayName() != "") otherPlayers.remove(player.getDisplayName());
 
 			return otherPlayers.stream().toList();
 

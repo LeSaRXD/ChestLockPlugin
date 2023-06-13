@@ -14,26 +14,24 @@ commands:
     usage: "/chest <lock|unlock|share|unshare|info> [player]"
 
 permissions:
-  chestlock:
-    lock:
-      description: "Allows the player to lock chests"
-      default: true
-    unlock:
-      description: "Allows the player to unlock their own chests"
-      default: true
-    share:
-      description: "Allows the player to share their locked chests"
-      default: true
-    unshare:
-      description: "Allows the player to stop sharing their locked chests"
-      default: true
-    admin:
-      unlock:
-        description: "Allows the admin to unlock any chests"
-        default: op
-      info:
-        description: "Allows the admin to view container info"
-        default: op
-      bypass:
-        description: "Allows the admin to open any locked chests"
-        default: false
+  chestlock.lock:
+    description: "Allows the player to lock chests"
+    default: true
+  chestlock.unlock:
+    description: "Allows the player to unlock their own chests"
+    default: true
+  chestlock.share:
+    description: "Allows the player to share their locked chests"
+    default: true
+  chestlock.unshare:
+    description: "Allows the player to stop sharing their locked chests"
+    default: true
+  chestlock.admin.unlock:
+    description: "Allows the admin to unlock any chests"
+    default: op
+  chestlock.admin.info:
+    description: "Allows the admin to view container info"
+    default: op
+  chestlock.admin.bypass:
+    description: "Allows the admin to open any locked chests"
+    default: false

@@ -153,7 +153,7 @@ public class ContainerStorageUtil {
 
 	private static boolean unlockContainer(@NotNull Location location, @NotNull Player unlocker) {
 
-		if(isContainerLocked(location)) return false;
+		if(!isContainerLocked(location)) return false;
 		if(!getContainerOwner(location).equals(unlocker.getName()) && !unlocker.hasPermission("chectlock.admin.unlock")) return false;
 
 		String key = locationToString(location);
