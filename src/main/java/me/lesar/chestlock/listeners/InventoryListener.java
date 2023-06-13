@@ -22,8 +22,6 @@ public class InventoryListener implements Listener {
 	@EventHandler
 	public void onInventoryMoveItem(InventoryMoveItemEvent e) {
 
-		plugin.getLogger().info("moved item(s)!");
-
 		Location sourceLocation = e.getSource().getLocation();
 		if(sourceLocation != null && ContainerStorageUtil.isContainerLocked(sourceLocation)) {
 

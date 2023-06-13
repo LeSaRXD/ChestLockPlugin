@@ -61,7 +61,6 @@ public class ContainerStorageUtil {
 
 	private static @Nullable String locationToString(@NotNull Location location) {
 
-		System.out.println(location.getX() + " " + location.getY() + " " + location.getZ() + "\n" + location.getBlockX() + " " + location.getBlockY() + " " + location.getBlockZ());
 		if(location.getX() != location.getBlockX() || location.getY() != location.getBlockY() || location.getZ() != location.getBlockZ()) return null;
 		return location.getWorld().getName() + ";" + location.getBlockX() + ";" + location.getBlockY() + ";" + location.getBlockZ();
 

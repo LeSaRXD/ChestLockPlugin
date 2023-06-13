@@ -1,4 +1,4 @@
-name: ChestLockPlugin
+name: ChestLock
 version: '${project.version}'
 main: me.lesar.chestlock.ChestLockPlugin
 api-version: 1.19
