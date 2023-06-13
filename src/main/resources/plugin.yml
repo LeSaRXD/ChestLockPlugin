@@ -1,0 +1,36 @@
+name: ChestLockPlugin
+version: '${project.version}'
+main: me.lesar.chestlock.ChestLockPlugin
+api-version: 1.19
+
+author: LeSaR
+website: https://github.com/LeSaRXD
+
+
+
+commands:
+  chest:
+    description: "General command for chestlock plugin"
+    usage: "/chest <lock|unlock|share|unshare|info> [player]"
+
+permissions:
+  chestlock:
+    lock:
+      description: "Allows the player to lock chests"
+      default: true
+    unlock:
+      description: "Allows the player to unlock their own chests"
+      default: true
+    share:
+      description: "Allows the player to share their locked chests"
+      default: true
+    admin:
+      unlock:
+        description: "Allows the admin to unlock any chests"
+        default: op
+      info:
+        description: "Allows the admin to view container info"
+        default: op
+      bypass:
+        description: "Allows the admin to open any locked chests"
+        default: false
