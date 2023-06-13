@@ -24,6 +24,9 @@ permissions:
     share:
       description: "Allows the player to share their locked chests"
       default: true
+    unshare:
+      description: "Allows the player to stop sharing their locked chests"
+      default: true
     admin:
       unlock:
         description: "Allows the admin to unlock any chests"
