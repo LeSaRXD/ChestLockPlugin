@@ -66,8 +66,6 @@ public class InteractListener implements Listener {
 
 		} else if(plugin.shulkerBoxMaterials.contains(material)) { // changing a shulker box
 
-			player.sendMessage("SHULKER BOX!");
-
 			player.sendMessage(getInteractionMessage(
 					interaction,
 					ContainerStorageUtil.changeContainerState(block.getLocation(), interaction, player),
