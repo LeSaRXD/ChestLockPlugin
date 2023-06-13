@@ -50,9 +50,9 @@ public class ChestCompleter implements TabCompleter {
 
 			HashSet<String> otherPlayers = new HashSet<>();
 			for(Player online : plugin.getServer().getOnlinePlayers()) otherPlayers.add(online.getName());
-			for(OfflinePlayer offline : plugin.getServer().getOfflinePlayers()) otherPlayers.add(offline.getName());
-			if(player.getName() != "") otherPlayers.remove(player.getName());
-			if(player.getDisplayName() != "") otherPlayers.remove(player.getDisplayName());
+			for(OfflinePlayer offline : plugin.getServer().getOfflinePlayers())
+				if(offline.getName() != null) otherPlayers.add(offline.getName());
+			otherPlayers.remove(player.getName());
 
 			return otherPlayers.stream().toList();
 
